@@ -1,0 +1,23 @@
+{
+  "name": "anchorpoint",
+  "version": "1.0.0",
+  "description": "Project 4 with General Assembly. Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort zone AND looks visually pleasing.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InanoKnowles/Project4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InanoKnowles/Project4/issues"
+  },
+  "homepage": "https://github.com/InanoKnowles/Project4#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
