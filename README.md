@@ -41,6 +41,19 @@ _[API Ninjas](https://api-ninjas.com/api/randomword)_
 
 _[Giphy Developers](https://developers.giphy.com/docs/api/#quick-start-guide)_
 
+## Bugs
+
+Some words don't seem to exist in Giphy and others do - Take this word for instance:
+
+- Duplicidentata (No Have)
+- Fovea (Actually does)
+
+Some queries don't have enough items to have 3 gifs appear.
+
+- unmalleable (only has 1 item available)
+
+I'm ALWAYS a winner.
+
 ## An RSS newsfeed (Scrapped that)
 
 - Newspaper but....Digital!!!

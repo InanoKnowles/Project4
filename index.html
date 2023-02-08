@@ -9,23 +9,36 @@
     <script defer src="main.js"></script>
 </head>
 
-
 <body id="body">
     <div class="container">
         <header>
           <h1>GIPHMAN</h1>
-            <form id="yesPlay">
-              <label for="yesPlay">
-                <button type="submit">PLAY GAME</button></label>
+          <!-- Intended for the API calls -->
+            <form id="playGame">
+                <button type="submit">PLAY GAME</button>
             </form>
         </header>
       </div>
         <div id="results" class="results"></div>
 
-        <div class="guessZone">Guess the word by picking 1 letter at a time</div>
-    
+        <!-- Game Logic/Mechanic  -->
 
+        <div class="header-wrapper">
+          <div class="hint" id="hint"></div>
+          <div class="unknown-word" id="unknownWord"></div>
+        </div>
+        
+          <div id="letters" class="letters"></div>
+          <div class="remaining-lives" id="rLives">
+            <p>Remaining lives: <span id="rLives_count"></span></p>
+          </div>
+        
+    
+        <div id="messageBox" class="message-box"></div>
+        
+</div>
 </body>
+
 
 
 </html>
