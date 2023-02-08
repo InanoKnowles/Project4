@@ -1,0 +1,58 @@
+* {
+  width: 1000px;
+  margin: auto;
+}
+
+body {
+background-color: red;
+}
+
+.nav-bar {
+width: 1000px;
+height: 45px;
+background-color: orange;
+}
+
+.header-area {
+  width: 1000px;
+  height: 260px;
+  background-color: blue;
+}
+
+.content-area {
+  display: flex;
+  width: 1000px;
+  height: 511px;
+  background-color: yellow;
+}
+
+.articles {
+  display: flex;
+  width: 300px;
+  height: 500px;
+  background-color: pink;
+}
+
+.cta-area {
+  display: flex;
+  width: 1000px;
+  height: 200px;
+  text-align: center;
+  flex-direction: row;
+  background-color: green;
+  align-items: center;
+  align-content:center;
+  flex-wrap: wrap;
+}
+
+.cta-area button {
+  width: 90px;
+  height: 40px;
+}
+
+.footer-area {
+  width: 1000px;
+  height: 30px;
+  background-color: purple;
+}
+
