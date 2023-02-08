@@ -11,4 +11,6 @@ At this point in time I have changed my project idea 3 times (currently idealess
 
 For me it's ~> Really Simple Syndication (You know? Like...simple, standardized content distribution) Think of it as a digital version of a newspaper but each story/article can be clicked on to see more information on the topic. This is useful if you like to be quickly updated on things that interests you.
 
-![VisualMockup](Screenshot 2023-02-08 at 10.49.36 am.png)
+## Visual Plan:
+
+![Screenshot 2023-02-08 at 10 49 36 am](https://user-images.githubusercontent.com/116997107/217401232-4023c98a-c416-4f24-8cfe-f4e857e0573b.png)
