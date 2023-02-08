@@ -69,17 +69,9 @@ function genWordToArray(s) {
   console.log(genWord);
 }
 
-//--|Quotes - If time allows the game can be made harder with this guess quotes instead of one word|---
-// var category = 'happiness'
-// $.ajax({
-//     method: 'GET',
-//     url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-//     headers: { 'X-Api-Key': 'YOUR_API_KEY'},
-//     contentType: 'application/json',
-//     success: function(result) {
-//         console.log(result);
-//     },
-//     error: function ajaxError(jqXHR) {
-//         console.error('Error: ', jqXHR.responseText);
-//     }
-// });
+// --------------
+// Win/Lose Conditions
+let answerArray = [];
+for (let i = 0; i < genWord.length; i++) {
+  answerArray[i] = "_";
+}

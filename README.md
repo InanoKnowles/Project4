@@ -13,6 +13,28 @@ The aim now is to create a pure front end app that uses a giphy API.
 This is the current plan:
 ![Screenshot 2023-02-08 at 5 17 48 pm](https://user-images.githubusercontent.com/116997107/217461004-45970af1-f667-4462-99a8-5b8cb9d0d262.png)
 
+## Pseudo Code
+
+Pick a random word (APININJA)
+Find hints (GIPHYAPI)
+
+While the word has not been guessed {
+Show the player their current progress
+Get a guess from the player
+If the player wants to quit the game {
+Quit the game
+}
+Else If the guess is not a single letter {
+Tell the player to pick a single letter
+}
+Else {
+If the guess is in the word {
+Update the player's progress with the guess
+}
+}
+}
+Congratulate the player on guessing the word
+
 ## AIPs Used
 
 _[API Ninjas](https://api-ninjas.com/api/randomword)_

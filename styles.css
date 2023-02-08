@@ -1,9 +1,10 @@
+/* Giphy API */
 #search-form {
   width: 500px;
   height: 50px;
 }
 
-.container{
+.container {
   display: flex;
   width: 1000px;
   flex-direction: row;
@@ -14,8 +15,15 @@
   margin:auto;
 }
 
-img{ 
+img { 
   margin:5px;
   width:200px;
   height:200px;
 }
+
+body {
+  background-color: rgb(75, 121, 207);
+  width: 1000px;
+  margin: auto;
+}
+/* ------------------- */
