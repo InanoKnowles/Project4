@@ -1,16 +1,26 @@
-# Project 4 - Anchor Point
+# Project 4 - Giphman
 
 Project 4 with General Assembly.
 Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort zone AND looks visually pleasing.
 
-At this point in time I have changed my project idea 3 times (currently idealess and bitter) SOOOOOooOoooOooo - I've decided to attempt something I have ZERO interest in that makes most people's eyes cringe at the sight of it.
+You guessed it - With this update it is with more news of another idea and attempt biting the dust. (Under teacher recommendations I change ideas).
 
-## An RSS newsfeed
+~ This time....I....present to you ~
 
-- RSS stands for many things, to different kinds of people.
+## Giphman
 
-For me it's ~> Really Simple Syndication (You know? Like...simple, standardized content distribution) Think of it as a digital version of a newspaper but each story/article can be clicked on to see more information on the topic. This is useful if you like to be quickly updated on things that interests you.
+- Hangman but....using gifs!!!
 
-## Visual Plan:
+The aim now is to create a pure front end app that uses a giphy API.
 
-![Screenshot 2023-02-08 at 10 49 36 am](https://user-images.githubusercontent.com/116997107/217401232-4023c98a-c416-4f24-8cfe-f4e857e0573b.png)
+## An RSS newsfeed (Scrapped that)
+
+- Newspaper but....its digital!!!
+
+## MangaLuva (Scrapped that)
+
+- Canva but....Manga creating!!!
+
+## MermaidTail (Scrapped that)
+
+- Flappy Bird but....underwater with a mermaid!!!
