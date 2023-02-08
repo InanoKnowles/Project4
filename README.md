@@ -13,9 +13,12 @@ You guessed it - With this update it is with more news of another idea and attem
 
 The aim now is to create a pure front end app that uses a giphy API.
 
+This is the current plan:
+![Screenshot 2023-02-08 at 5 17 48 pm](https://user-images.githubusercontent.com/116997107/217461004-45970af1-f667-4462-99a8-5b8cb9d0d262.png)
+
 ## An RSS newsfeed (Scrapped that)
 
-- Newspaper but....its digital!!!
+- Newspaper but....Digital!!!
 
 ## MangaLuva (Scrapped that)
 
@@ -23,4 +26,4 @@ The aim now is to create a pure front end app that uses a giphy API.
 
 ## MermaidTail (Scrapped that)
 
-- Flappy Bird but....underwater with a mermaid!!!
+- Flappy Bird but....Underwater with a mermaid!!!
