@@ -5,33 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giphman</title>
-   
-    <style>
-    #search-form {
-        width: 500px;
-        height: 50px;
-    }
-
-    .container{
-        display: flex;
-        width: 1000px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        margin:auto;
-    }
-    
-    img{ 
-        margin:5px;
-        width:200px;
-        height:200px;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
 </head>
 
-<body id = "body" style = text-align:center;>
+<body id = "body" >
     <div class="container">
         <header>
             <form id="yesPlay">
@@ -47,87 +25,5 @@
   </div>
 </body>
 
-<script>
 
-const searchInput = document.getElementById("search-input");
-const resultsElement = document.getElementById("results");
-
-let q = "";
-
-let resultsHTML = "";
-let reloadCount = 0;
-
-
-let genWord = []
-let lettersGuessed = []
-let lettersLeftToGuess = 0
-
-yesPlay.addEventListener("submit", function (event) {
-  event.preventDefault();
-  // q = searchInput.value;
-  generateRandWord()
-  // search(q);
-  // console.log(generateRandWord());
-});
-
-function search(q) {
-  let path = `https://api.giphy.com/v1/gifs/search?api_key=5axeqUNKjjSDpnrZGYF4EGNKBKkxh9sY&q=${q}&limit=3&&rating=g&lang=en`;
-  console.log("New Gifs reloaded " + reloadCount + " times");
-  let fetchPromise = fetch(path);
-
-  fetchPromise
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (json) {
-      resultsElement.innerHTML = "";
-      json.data.forEach(function (object) {
-        // console.log(object.images.fixed_width.url);
-        const url = object.images.fixed_width.url;
-        const width = object.images.fixed_width;
-        const height = object.images.fixed_width.height;
-        resultsHTML += `
-                <img 
-                class="gifItem" 
-                src="${url}" 
-                width="${width}" 
-                height="${height}"
-                >`;
-      });
-      
-      resultsElement.innerHTML = resultsHTML;
-    })
-    .catch(function (err) {
-      console.log(err.message);
-    });
-}
-
-
-//---| Generates a random word for the game |---
-function generateRandWord() {
-let path = `https://api.api-ninjas.com/v1/randomword`;
-let response = fetch(path, {
-    method: 'GET',
-    headers: {
-      'X-Api-Key': 'OqcnOPvLxscEV0tpcsHLgg==xW7msnrdB9dVDtDN'
-      }
-    })
-    response
-    .then(response=>response.json())
-    .then(data=>{ console.log(data.word); 
-    lettersLeftToGuess = data.word.length
-    search(data.word)
-    })
-  // console.log(response.json.word);
-  // let fetchPromise = fetch(path);
-}
-
-//---| Makes the generated random word turn into an array |---
-function genWordToArray(s) {
-  genWord = s.split() 
-  console.log(genWord)
-}
-
-
-</script>
 </html>

@@ -13,6 +13,12 @@ The aim now is to create a pure front end app that uses a giphy API.
 This is the current plan:
 ![Screenshot 2023-02-08 at 5 17 48 pm](https://user-images.githubusercontent.com/116997107/217461004-45970af1-f667-4462-99a8-5b8cb9d0d262.png)
 
+## AIPs Used
+
+_[API Ninjas](https://api-ninjas.com/api/randomword)_
+
+_[Giphy Developers](https://developers.giphy.com/docs/api/#quick-start-guide)_
+
 ## An RSS newsfeed (Scrapped that)
 
 - Newspaper but....Digital!!!

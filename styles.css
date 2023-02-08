@@ -1,0 +1,21 @@
+#search-form {
+  width: 500px;
+  height: 50px;
+}
+
+.container{
+  display: flex;
+  width: 1000px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin:auto;
+}
+
+img{ 
+  margin:5px;
+  width:200px;
+  height:200px;
+}
