@@ -2,9 +2,6 @@
 
 Project 4 with General Assembly.
 Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort zone AND looks visually pleasing.
-
-You guessed it - With this update it is with more news of another idea and attempt biting the dust. (Under teacher recommendations I change ideas).
-
 ~ This time....I....present to you ~
 
 ## Giphman
@@ -27,3 +24,5 @@ This is the current plan:
 ## MermaidTail (Scrapped that)
 
 - Flappy Bird but....Underwater with a mermaid!!!
+
+(Under teacher recommendations I changed my ideas).

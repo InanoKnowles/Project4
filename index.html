@@ -34,38 +34,44 @@
 <body id = "body" style = text-align:center;>
     <div class="container">
         <header>
-            <form id="search-form">
-                <input id="search-input" type="text" placeholder="search">
-                <button type="submit">Search</button>
+            <form id="yesPlay">
+              <label for="yesPlay">Wanna Play?</label>
+                <button type="submit">Yes</button>
             </form>
         </header>
         <div id="results" class="results">
+
         </div>
     </div>
+  
+  </div>
 </body>
 
 <script>
-const searchForm = document.getElementById("search-form");
+
 const searchInput = document.getElementById("search-input");
 const resultsElement = document.getElementById("results");
-let apiKey = "5axeqUNKjjSDpnrZGYF4EGNKBKkxh9sY";
+
 let q = "";
-let offset = 0;
+
 let resultsHTML = "";
 let reloadCount = 0;
-resultsElement.innerHTML = "";
-let isSafeToLoadMoreGifs = true;
-searchForm.addEventListener("submit", function (event) {
+
+
+let genWord = []
+let lettersGuessed = []
+let lettersLeftToGuess = 0
+
+yesPlay.addEventListener("submit", function (event) {
   event.preventDefault();
-  q = searchInput.value;
-  search(q);
-  console.log("search1-CALL");
+  // q = searchInput.value;
+  generateRandWord()
+  // search(q);
+  // console.log(generateRandWord());
 });
 
 function search(q) {
-  isSafeToLoadMoreGifs = false;
-  console.log({ isSafeToLoadMoreGifs });
-  let path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${q}&limit=3&offset=${offset}&rating=g&lang=en`;
+  let path = `https://api.giphy.com/v1/gifs/search?api_key=5axeqUNKjjSDpnrZGYF4EGNKBKkxh9sY&q=${q}&limit=3&&rating=g&lang=en`;
   console.log("New Gifs reloaded " + reloadCount + " times");
   let fetchPromise = fetch(path);
 
@@ -74,8 +80,9 @@ function search(q) {
       return res.json();
     })
     .then(function (json) {
+      resultsElement.innerHTML = "";
       json.data.forEach(function (object) {
-        console.log(object.images.fixed_width.url);
+        // console.log(object.images.fixed_width.url);
         const url = object.images.fixed_width.url;
         const width = object.images.fixed_width;
         const height = object.images.fixed_width.height;
@@ -87,8 +94,7 @@ function search(q) {
                 height="${height}"
                 >`;
       });
-      isSafeToLoadMoreGifs = true;
-      console.log({ isSafeToLoadMoreGifs });
+      
       resultsElement.innerHTML = resultsHTML;
     })
     .catch(function (err) {
@@ -96,15 +102,32 @@ function search(q) {
     });
 }
 
-window.onscroll = function (ev) {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    if (isSafeToLoadMoreGifs === true) {
-      reloadCount += 1;
-      offset += 3;
-      console.log("search2-CALL");
-      search(q);
-    }
-  }
-};
+
+//---| Generates a random word for the game |---
+function generateRandWord() {
+let path = `https://api.api-ninjas.com/v1/randomword`;
+let response = fetch(path, {
+    method: 'GET',
+    headers: {
+      'X-Api-Key': 'OqcnOPvLxscEV0tpcsHLgg==xW7msnrdB9dVDtDN'
+      }
+    })
+    response
+    .then(response=>response.json())
+    .then(data=>{ console.log(data.word); 
+    lettersLeftToGuess = data.word.length
+    search(data.word)
+    })
+  // console.log(response.json.word);
+  // let fetchPromise = fetch(path);
+}
+
+//---| Makes the generated random word turn into an array |---
+function genWordToArray(s) {
+  genWord = s.split() 
+  console.log(genWord)
+}
+
+
 </script>
 </html>
