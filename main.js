@@ -32,11 +32,26 @@ function generateRandWord() {
 }
 let theHiddenWord = `${q}`;
 
+//---| Quotes Random Generator - If I get time I will do this |---
+// let category = 'happiness'
+// $.ajax({
+//     method: 'GET',
+//     url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+//     headers: { 'X-Api-Key': 'YOUR_API_KEY'},
+//     contentType: 'application/json',
+//     success: function(result) {
+//         console.log(result);
+//     },
+//     error: function ajaxError(jqXHR) {
+//         console.error('Error: ', jqXHR.responseText);
+//     }
+// });
+
 // Split word
 function splitWords(word) {
   splitWord = [];
   wordLength = word.length;
-  for (var i = 0; i < wordLength; i++) {
+  for (let i = 0; i < wordLength; i++) {
     splitWord[i] = word.charAt(i).toLowerCase();
   }
   console.log(splitWord);
@@ -80,8 +95,8 @@ function fillBlanks() {
   while (wordElement.firstChild) {
     wordElement.removeChild(wordElement.lastChild);
   }
-  for (var i = 0; i < wordLength; i++) {
-    var x = document.createElement("INPUT");
+  for (let i = 0; i < wordLength; i++) {
+    let x = document.createElement("INPUT");
     x.setAttribute("type", "text");
     x.setAttribute("id", "letter-" + i);
     x.setAttribute("minlength", 1);
@@ -97,7 +112,9 @@ function fillBlanks() {
 const unknownWord = document.querySelector("#unknownWord");
 const letters = document.querySelector("#letters");
 const remainingLives = document.querySelector("#remainingLives");
-const remainingLives_count = document.querySelector("#remainingLives_count");
+const remainingLives_count = document.querySelector(
+  "span#remainingLives_count"
+);
 const messageBox = document.querySelector("#messageBox");
 
 const letters_string = "abcdefghijklmnopqrstuvwxyz";
@@ -123,19 +140,19 @@ playGame.addEventListener("submit", function (event) {
   event.preventDefault();
   generateRandWord();
   resultsElement.innerHTML = "";
-  lives = 7;
+  // lives = 7;
   remainingLives_count.innerText = lives;
   document.getElementById("guessLetterButton").disabled = false;
   messageBox.innerText = "";
-  filled = 0;
+  // filled = 0;
 });
 
 guessLetterButton.addEventListener("click", function (event) {
   event.preventDefault();
   let theLetter = guessInput.value;
 
-  if (theLetter == "") {
-    messageBox.innerText = "Please enter a letter";
+  if (theLetter === "") {
+    messageBox.textContent = "Please enter a letter";
   } else {
     console.log("The letter entered was: " + theLetter);
 
@@ -154,17 +171,19 @@ guessLetterButton.addEventListener("click", function (event) {
         var id = "letter-" + letterPos[i];
         document.getElementById(id).value = theLetter;
       }
+    } else {
+      lives = lives - 1;
     }
-    lives = lives - 1;
-    if (filled == wordLength) {
-      messageBox.innerText = "Lame...You won you egg";
+    if (filled === wordLength) {
+      messageBox.textContent = "WON";
       gameOver = true;
       document.getElementById("guessLetterButton").disabled = true;
     }
-    if (lives == 0) {
-      messageBox.innerText = "HAHAHAHA YOU GOT YO BUTT HANDED TO YOU";
+
+    if (lives === 0) {
+      messageBox.textContent = "LOST";
       gameOver = true;
     }
   }
-  remainingLives_count.innerText = lives;
+  remainingLives_count.textContent = lives;
 });
