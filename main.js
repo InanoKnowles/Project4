@@ -1,12 +1,15 @@
 //---| API: |---
 
 const searchInput = document.getElementById("search-input");
+const guessInput = document.getElementById("guessedletter");
 const resultsElement = document.getElementById("results");
+const wordElement = document.getElementById("wordLetters");
+
 let q = "";
 let reloadCount = 0;
-let guessInput = "";
 let splitWord = [];
 let wordLength = 0;
+
 //---| Generates a random word for the game |---
 
 function generateRandWord() {
@@ -23,7 +26,20 @@ function generateRandWord() {
       console.log(data.word);
       lettersLeftToGuess = data.word.length;
       imgSearchOfRandWord(data.word);
+      splitWords(data.word);
+      fillBlanks();
     });
+}
+let theHiddenWord = `${q}`;
+
+// Split word
+function splitWords(word) {
+  splitWord = [];
+  wordLength = word.length;
+  for (var i = 0; i < wordLength; i++) {
+    splitWord[i] = word.charAt(i).toLowerCase();
+  }
+  console.log(splitWord);
 }
 
 // //---| This function takes the random word generated and finds images related |---
@@ -58,25 +74,31 @@ function imgSearchOfRandWord(q) {
     });
 }
 
+// Fill Blanks for word
+
 function fillBlanks() {
-  let wordsHTML = "";
-  for (var i = 0; i < wordLength; i++) {
-    wordsHTML += `
-                <input type="text" id="letter-${i}}" name="guessedletter" required
-       minlength="1" maxlength="1" size="1" readonly>`;
+  while (wordElement.firstChild) {
+    wordElement.removeChild(wordElement.lastChild);
   }
-  wordElement.innerHTML = wordsHTML;
+  for (var i = 0; i < wordLength; i++) {
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    x.setAttribute("id", "letter-" + i);
+    x.setAttribute("minlength", 1);
+    x.setAttribute("maxlength", 1);
+    x.setAttribute("size", 1);
+    wordElement.appendChild(x);
+    document.getElementById("letter-" + i).readOnly = true;
+  }
 }
 
 //---| Game Play: |---
 
-const unknownWord = document.querySelector("div#unknownWord");
-const letters = document.querySelector("div#letters.letters");
+const unknownWord = document.querySelector("#unknownWord");
+const letters = document.querySelector("#letters");
 const remainingLives = document.querySelector("#remainingLives");
-const remainingLives_count = document.querySelector(
-  "span#remainingLives_count"
-);
-const messageBox = document.querySelector("div#messageBox.message-box");
+const remainingLives_count = document.querySelector("#remainingLives_count");
+const messageBox = document.querySelector("#messageBox");
 
 const letters_string = "abcdefghijklmnopqrstuvwxyz";
 
@@ -84,16 +106,10 @@ console.log(letters_string.split(""));
 
 let lives = 7;
 let gameOver = false;
-let guessedLetter = 0;
-let theHiddenWord = `${q}`;
+let filled = 0;
+
 const hidden_word = theHiddenWord;
-function splitWords(word) {
-  wordLength = word.length;
-  for (var i = 0; i < wordLength; i++) {
-    splitWord[i] = word.charAt(i);
-  }
-  console.log(splitWord);
-}
+
 const total_letters = hidden_word
   .split(" ")
   .map((word) => word.length)
@@ -101,94 +117,54 @@ const total_letters = hidden_word
 
 remainingLives_count.innerText = lives;
 
-letters_string.split("").forEach((letter) => {
-  letters.innerHTML += `
-        <div class="letter-box">
-            ${letter}
-        </div>
-    `;
-});
-
 //---| Eventlisteners |---
-// Buttons/forms/seperate them
 
 playGame.addEventListener("submit", function (event) {
   event.preventDefault();
   generateRandWord();
   resultsElement.innerHTML = "";
+  lives = 7;
+  remainingLives_count.innerText = lives;
+  document.getElementById("guessLetterButton").disabled = false;
+  messageBox.innerText = "";
+  filled = 0;
 });
 
-letters.addEventListener("click", ({ target }) => {
-  const clicked_letter = target.innerText.trim();
-  const empty_boxes = unknownWord.querySelectorAll(".empty-letter-box");
+guessLetterButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  let theLetter = guessInput.value;
 
-  if (
-    !target.classList.contains("clicked") &&
-    !target.classList.contains("letters") &&
-    !gameOver
-  ) {
-    target.classList.add("clicked");
+  if (theLetter == "") {
+    messageBox.innerText = "Please enter a letter";
+  } else {
+    console.log("The letter entered was: " + theLetter);
 
-    hidden_word.toLowerCase().includes(clicked_letter)
-      ? hidden_word.split("").forEach((letter, index) => {
-          if (letter.toLowerCase() == clicked_letter) {
-            empty_boxes[index].innerText = letter;
-            guessedLetter += 1;
-          }
-        })
-      : (lives -= 1);
-    console.log(guessedLetter);
-    remainingLives_count.innerText = lives;
+    let letterPos = [];
 
-    guessLetter.addEventListener("click", function (event) {
-      event.preventDefault();
-      let theLetter = guessInput.value;
-
-      if (theLetter === "") {
-        messageBox.innerText = "Please enter a letter";
-      } else {
-        console.log("The letter entered was: " + theLetter);
-
-        let letterPos = [];
-
-        for (i = 0; i < wordLength; i++) {
-          if (splitWord[i] === theLetter) {
-            letterPos.push(i);
-          }
-        }
-        console.log(letterPos);
-
-        if (letterPos.length !== 0) {
-          guessedLetter = guessedLetter + letterPos.length;
-          for (i = 0; i < letterPos.length; i++) {
-            var id = "letter-" + letterPos[i];
-            document.getElementById(id).value = theLetter;
-          }
-        }
-        if (guessedLetter === wordLength) {
-          messageBox.innerText = "Winner";
-          gameOver = true;
-        }
-        if (lives === 0) {
-          messageBox.innerText = "Loser";
-          gameOver = true;
-        }
+    for (i = 0; i < wordLength; i++) {
+      if (splitWord[i] === theLetter) {
+        letterPos.push(i);
       }
-      // ------------|Message Box|------------
-      // if (guessedLetter === total_letters) {
-      //   messageBox.innerText = `WINNER!`;
-      //   gameOver = true;
-      // }
-      // if (lives === 0) {
-      //   messageBox.innerText = `LOSER!`;
-      //   gameOver = true;
-      // }
-      // if (gameOver) {
-      //   letters.style.display = remainingLives.style.display = "none";
-      //   hidden_word.split("").forEach((letter, index) => {
-      //     empty_boxes[index].innerText = letter;
-      //   });
-      // }
-    });
+    }
+    console.log(letterPos);
+
+    if (letterPos.length != 0) {
+      filled = filled + letterPos.length;
+      for (i = 0; i < letterPos.length; i++) {
+        var id = "letter-" + letterPos[i];
+        document.getElementById(id).value = theLetter;
+      }
+    }
+    lives = lives - 1;
+    if (filled == wordLength) {
+      messageBox.innerText = "Lame...You won you egg";
+      gameOver = true;
+      document.getElementById("guessLetterButton").disabled = true;
+    }
+    if (lives == 0) {
+      messageBox.innerText = "HAHAHAHA YOU GOT YO BUTT HANDED TO YOU";
+      gameOver = true;
+    }
   }
+  remainingLives_count.innerText = lives;
 });

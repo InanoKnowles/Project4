@@ -41,6 +41,12 @@ _[API Ninjas](https://api-ninjas.com/api/randomword)_
 
 _[Giphy Developers](https://developers.giphy.com/docs/api/#quick-start-guide)_
 
+## Useful Resources
+
+Okay so google.com & youtube.com has been a huge help but exactly what has been useful? If you're looking to make your own hangman - Definitely learn what HTML DOM Events are and experiment with everything you see.
+
+_[W3schools - HTML DOM Events](https://www.w3schools.com/jsref/dom_obj_event.asp)_
+
 ## Bugs
 
 Some words don't seem to exist in Giphy and others do - Take this word for instance:

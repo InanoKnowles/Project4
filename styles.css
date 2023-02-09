@@ -49,7 +49,7 @@ body {
 }
 
 .letter-box:hover {
-  background-color: lightslategrey;
+  background-color: rgb(58, 165, 49);
   color: white;
 }
 
@@ -86,8 +86,8 @@ main {
 .letter-box.clicked {
   cursor: not-allowed;
   text-decoration: line-through;
-  background-color: lightcoral;
-  border-color: lightcoral;
+  background-color: rgb(158, 56, 51);
+  border-color: rgb(158, 56, 51);
 }
 
 .message-box {
