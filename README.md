@@ -1,9 +1,14 @@
 # Project 4 - Giphman
 
 Project 4 with General Assembly.
+
 Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort zone AND looks visually pleasing.
 
 ~ This time....I....present to you...my learning journey.
+
+TRY OUT THE GAME HERE:
+
+:link: _[Giphman by Inano](https://inanoknowles.github.io/Project4/)_ :link:
 
 This is for educational purposes so that I can learn how to code. If you happen to learn anything useful or have any advice for me to improve my skills please do tell :heart:
 
@@ -147,9 +152,9 @@ Let's just take a moment to acknowledge this cheeky fella - It took me far too l
 
 ![Screenshot 2023-02-09 at 2 55 13 pm](https://user-images.githubusercontent.com/116997107/217722190-86e86f31-b1da-47bf-ad29-05bcafc87c95.png)
 
-## Challenges...
+## Challenges...& Lessons...?
 
-Oh so many - at this point in time, as I learn how to code... I am slow in figuring out things for myself.
+Oh so many challenges - at this point in time, as I learn how to code... I am slow in figuring out things for myself.
 
 Ideas - Changing ideas.
 
@@ -164,6 +169,8 @@ Time, Knowledge and Patience was all against me. I learned a lot about my weakne
 TBH - Someone like me...here? Right now doing SOFTWARE ENGINEERING? HAHAHA Yeah Past me would have thought you were joking.
 
 Take a seat kiddo ~ This is who we grew up to be, someone who loves challenges, enjoys learning and ever so passionately looks forward to the next emotional rollercoasters of debugging and building apps from scratch....in plain - vanilla javascript.
+
+I've learnt that I can ACTUALLY do things I put my mind to
 
 ## Future Features
 
