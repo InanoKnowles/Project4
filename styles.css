@@ -53,12 +53,7 @@ body {
   color: white;
 }
 
-.hint {
-  margin: 50px 0 20px 0;
-  text-align: center;
-  font-size: 1.5rem;
-  color: green;
-}
+
 .unknown-word {
   display: flex;
   text-align: center;

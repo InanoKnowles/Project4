@@ -4,7 +4,9 @@ const searchInput = document.getElementById("search-input");
 const resultsElement = document.getElementById("results");
 let q = "";
 let reloadCount = 0;
-
+let guessInput = "";
+let splitWord = [];
+let wordLength = 0;
 //---| Generates a random word for the game |---
 
 function generateRandWord() {
@@ -23,7 +25,6 @@ function generateRandWord() {
       imgSearchOfRandWord(data.word);
     });
 }
-let theHiddenWord = `${q}`;
 
 // //---| This function takes the random word generated and finds images related |---
 
@@ -57,13 +58,25 @@ function imgSearchOfRandWord(q) {
     });
 }
 
+function fillBlanks() {
+  let wordsHTML = "";
+  for (var i = 0; i < wordLength; i++) {
+    wordsHTML += `
+                <input type="text" id="letter-${i}}" name="guessedletter" required
+       minlength="1" maxlength="1" size="1" readonly>`;
+  }
+  wordElement.innerHTML = wordsHTML;
+}
+
 //---| Game Play: |---
 
-const unknownWord = document.querySelector("#unknownWord");
-const letters = document.querySelector("#letters");
-const rLives = document.querySelector("#rLives");
-const rLives_count = document.querySelector("#rLives_count");
-const messageBox = document.querySelector("#messageBox");
+const unknownWord = document.querySelector("div#unknownWord");
+const letters = document.querySelector("div#letters.letters");
+const remainingLives = document.querySelector("#remainingLives");
+const remainingLives_count = document.querySelector(
+  "span#remainingLives_count"
+);
+const messageBox = document.querySelector("div#messageBox.message-box");
 
 const letters_string = "abcdefghijklmnopqrstuvwxyz";
 
@@ -71,16 +84,22 @@ console.log(letters_string.split(""));
 
 let lives = 7;
 let gameOver = false;
-let filled = 0;
-
+let guessedLetter = 0;
+let theHiddenWord = `${q}`;
 const hidden_word = theHiddenWord;
-
+function splitWords(word) {
+  wordLength = word.length;
+  for (var i = 0; i < wordLength; i++) {
+    splitWord[i] = word.charAt(i);
+  }
+  console.log(splitWord);
+}
 const total_letters = hidden_word
   .split(" ")
   .map((word) => word.length)
   .reduce((acc, curr) => acc + curr);
 
-rLives_count.textContent = lives;
+remainingLives_count.innerText = lives;
 
 letters_string.split("").forEach((letter) => {
   letters.innerHTML += `
@@ -91,6 +110,7 @@ letters_string.split("").forEach((letter) => {
 });
 
 //---| Eventlisteners |---
+// Buttons/forms/seperate them
 
 playGame.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -99,7 +119,7 @@ playGame.addEventListener("submit", function (event) {
 });
 
 letters.addEventListener("click", ({ target }) => {
-  const clicked_letter = target.textContent.trim();
+  const clicked_letter = target.innerText.trim();
   const empty_boxes = unknownWord.querySelectorAll(".empty-letter-box");
 
   if (
@@ -112,29 +132,63 @@ letters.addEventListener("click", ({ target }) => {
     hidden_word.toLowerCase().includes(clicked_letter)
       ? hidden_word.split("").forEach((letter, index) => {
           if (letter.toLowerCase() == clicked_letter) {
-            empty_boxes[index].textContent = letter;
-            filled += 1;
+            empty_boxes[index].innerText = letter;
+            guessedLetter += 1;
           }
         })
       : (lives -= 1);
+    console.log(guessedLetter);
+    remainingLives_count.innerText = lives;
 
-    rLives_count.textContent = lives;
+    guessLetter.addEventListener("click", function (event) {
+      event.preventDefault();
+      let theLetter = guessInput.value;
 
-    if (filled == total_letters) {
-      messageBox.textContent = "Lame...You won you egg";
-      gameOver = true;
-    }
+      if (theLetter === "") {
+        messageBox.innerText = "Please enter a letter";
+      } else {
+        console.log("The letter entered was: " + theLetter);
 
-    if (lives == 0) {
-      messageBox.textContent = "HAHAHAHA YOU GOT YO BUTT HANDED TO YOU";
-      gameOver = true;
-    }
+        let letterPos = [];
 
-    if (gameOver) {
-      letters.style.display = rLives.style.display = "none";
-      hidden_word.split("").forEach((letter, index) => {
-        empty_boxes[index].textContent = letter;
-      });
-    }
+        for (i = 0; i < wordLength; i++) {
+          if (splitWord[i] === theLetter) {
+            letterPos.push(i);
+          }
+        }
+        console.log(letterPos);
+
+        if (letterPos.length !== 0) {
+          guessedLetter = guessedLetter + letterPos.length;
+          for (i = 0; i < letterPos.length; i++) {
+            var id = "letter-" + letterPos[i];
+            document.getElementById(id).value = theLetter;
+          }
+        }
+        if (guessedLetter === wordLength) {
+          messageBox.innerText = "Winner";
+          gameOver = true;
+        }
+        if (lives === 0) {
+          messageBox.innerText = "Loser";
+          gameOver = true;
+        }
+      }
+      // ------------|Message Box|------------
+      // if (guessedLetter === total_letters) {
+      //   messageBox.innerText = `WINNER!`;
+      //   gameOver = true;
+      // }
+      // if (lives === 0) {
+      //   messageBox.innerText = `LOSER!`;
+      //   gameOver = true;
+      // }
+      // if (gameOver) {
+      //   letters.style.display = remainingLives.style.display = "none";
+      //   hidden_word.split("").forEach((letter, index) => {
+      //     empty_boxes[index].innerText = letter;
+      //   });
+      // }
+    });
   }
 });
