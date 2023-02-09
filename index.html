@@ -13,42 +13,41 @@
 <body id="body">
 
   <div class="container">
+      <div class="content-styling">
+        <header>
+          <h1>GIPHMAN</h1>
+        </header>
+          <!-- Intended for the API calls -->
+          <form id="playGame">
+            <button type="submit">PLAY GAME</button>
+          </form>
+        
+          <div id="results" class="results"></div>
 
-    <header>
-      <h1>GIPHMAN</h1>
-      <!-- Intended for the API calls -->
-      <form id="playGame">
-        <button type="submit">PLAY GAME</button>
-      </form>
-    </header>
+          <!-- Game Logic/Mechanic  -->
+          <div class="unknown-word" id="unknownWord"></div>
+        
+
+          <!-- <div id="letters" class="letters"></div> -->
+          <div class="remaining-lives" id="remainingLives">
+          <p>Remaining lives: <span id="remainingLives_count"></span></p>
+          </div>
+
+          <div id="wordElement" class="wordLetters"></div>
+
+          <form id="guessLetter">
+            <input type="text" id="guessedletter" name="guessedletter" required minlength="1" maxlength="1" size="10">
+            <button id="guessLetterButton">GUESS</button>
+          </form>
+
+          <div id="allGuessesMade_display"></div>
+
+        <div id="messageBox" class="message-box"></div>
+      </div>
+      <footer>Made as part of General Assembly Project for Educational Purposes</footer>
   </div>
-  <div id="results" class="results"></div>
 
-  <!-- Game Logic/Mechanic  -->
-
-  <div class="header-wrapper">
-
-    <div class="unknown-word" id="unknownWord"></div>
-  </div>
-
-  <!-- <div id="letters" class="letters"></div> -->
-  <div class="remaining-lives" id="remainingLives">
-    <p>Remaining lives: <span id="remainingLives_count"></span></p>
-  </div>
-
-  <div id="wordElement" class="wordLetters"></div>
-
-  <form id="guessLetter">
-    <input type="text" id="guessedletter" name="guessedletter" required minlength="1" maxlength="1" size="10">
-    <button id="guessLetterButton">GUESS</button>
-  </form>
-
-<div id="allGuessesMade_display"></div>
-
-  <div id="messageBox" class="message-box"></div>
-  </div>
-
-  </div>
+  
 </body>
 
 </html>

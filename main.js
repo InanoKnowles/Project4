@@ -4,10 +4,10 @@ const searchInput = document.getElementById("search-input");
 const guessInput = document.getElementById("guessedletter");
 const resultsElement = document.getElementById("results");
 const wordElement = document.getElementById("wordElement");
-
+let grabLife = 0;
 let q = "";
-let splitWord = [];
-let wordLength = 0;
+let splitWord = []; // Stores the individual letters from the random word in an array. This will be used later to check if user has guessed a right letter
+let wordLength = 0; // Length of the random word
 
 //---| Generates a random word for the game |---
 
@@ -29,21 +29,6 @@ function generateRandWord() {
     });
 }
 let theHiddenWord = `${q}`;
-
-//---| Quotes Random Generator - If I get time I will do this |---
-// let category = 'happiness'
-// $.ajax({
-//     method: 'GET',
-//     url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-//     headers: { 'X-Api-Key': 'YOUR_API_KEY'},
-//     contentType: 'application/json',
-//     success: function(result) {
-//         console.log(result);
-//     },
-//     error: function ajaxError(jqXHR) {
-//         console.error('Error: ', jqXHR.responseText);
-//     }
-// });
 
 /**
  * Split word : We get random word, split it into an array then save the length of the word
@@ -90,7 +75,7 @@ function imgSearchOfRandWord(q) {
     });
 }
 
-// Fill Blanks for word
+// Generate blank boxes for word based on word length and show it on the webpage
 
 function fillBlanks() {
   while (wordElement.firstChild) {
@@ -99,12 +84,12 @@ function fillBlanks() {
   for (let i = 0; i < wordLength; i++) {
     let x = document.createElement("INPUT");
     x.setAttribute("type", "text");
-    x.setAttribute("id", "letter-" + i);
+    x.setAttribute("id", "letter-" + i); // making sure each blank box has a unique id so we can populate it later
     x.setAttribute("minlength", 1);
     x.setAttribute("maxlength", 1);
     x.setAttribute("size", 1);
     wordElement.appendChild(x);
-    document.getElementById("letter-" + i).readOnly = true;
+    document.getElementById("letter-" + i).readOnly = true; // To make sure user cannot edit these
   }
 }
 
@@ -121,8 +106,8 @@ const messageBox = document.querySelector("#messageBox");
 const letters_string = "abcdefghijklmnopqrstuvwxyz";
 
 console.log(letters_string.split(""));
-
-let lives = 7;
+let livesWrong = 0;
+let lives = 5;
 let gameOver = false;
 let guessProgress = 0;
 let guessStall = 0;
@@ -171,7 +156,6 @@ guessLetterButton.addEventListener("click", function (event) {
     for (let i = 0; i < wordLength; i++) {
       if (splitWord[i] === theLetter) {
         indexesOfGuessedLetter_correct.push(i);
-        // allGuessesMade_display.push(i);
       }
     }
 
@@ -179,7 +163,7 @@ guessLetterButton.addEventListener("click", function (event) {
     // console.log(allGuessesMade_display + "Meow");
 
     if (indexesOfGuessedLetter_correct.length !== 0) {
-      // The player got one right! Update the wordLetters boxes
+      // The player got one right! Update the wordElements boxes
       guessProgress = guessProgress + indexesOfGuessedLetter_correct.length;
 
       for (let i = 0; i < indexesOfGuessedLetter_correct.length; i++) {
@@ -189,20 +173,33 @@ guessLetterButton.addEventListener("click", function (event) {
     } else {
       //Player guessed wrong - subtract lives
       lives = lives - 1;
-      totalGuesses = theLetter.length;
-      console.log(totalGuesses);
     }
 
     if (lives > 0 && guessProgress === wordLength) {
       // Win state
-      messageBox.innerText = `You WON with ${guessProgress} attempted guesses`;
+      messageBox.innerText = `You WON with ${grabLife} wrong guesses`;
       gameOver = true;
       document.getElementById("guessLetterButton").disabled = true;
     } else if (lives === 0 && guessProgress < wordLength) {
       // Lose state
-      messageBox.innerText = `You LOST with ${guessProgress} attempted guesses`;
+      messageBox.innerText = `You LOST all your lives!`;
       gameOver = true;
     }
   }
   remainingLives_count.innerText = lives; //Update the display to show how many lives are left
+  grabLife = 5 - lives;
 });
+//---| Quotes Random Generator - If I get time I will do this |---
+// let category = 'happiness'
+// $.ajax({
+//     method: 'GET',
+//     url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+//     headers: { 'X-Api-Key': 'YOUR_API_KEY'},
+//     contentType: 'application/json',
+//     success: function(result) {
+//         console.log(result);
+//     },
+//     error: function ajaxError(jqXHR) {
+//         console.error('Error: ', jqXHR.responseText);
+//     }
+// });

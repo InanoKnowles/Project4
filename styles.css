@@ -1,11 +1,12 @@
 /* Giphy API */
 #search-form {
+  display: flex;
   width: 500px;
   height: 50px;
 }
 
 .container {
-  display: flex;
+  /* display: flex; */
   width: 1000px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -23,77 +24,72 @@ img {
 
 body {
   display: flex;
-  background-color: rgb(75, 121, 207);
-  width: 1000px;
+  /* background-color: rgb(75, 121, 207); */
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	/* background-size: 400% 400%; */
+	animation: gradient 10s ease infinite;
+	height: 100vh;
 }
 /* ------------------- */
-.letters {
-  padding: 30px;
-  max-width: 200px;
-  background-color: #eee;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+/* Game Play Stuff */
+.messageBox {
+  font-size: 1.5rem;
 }
 
-.letter-box {
-  cursor: pointer;
-  text-align: center;
-  border: 2px solid rgb(81, 166, 212);
-  margin: 5px;
-  padding: 8px;
-}
-
-.letter-box:hover {
-  background-color: rgb(58, 165, 49);
-  color: white;
-}
-
-
-.unknown-word {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.empty-letter-box {
-  margin: 30px 5px;
-  font-size: 2rem;
-  text-align: center;
-  width: 40px;
-  border-bottom: 2px solid black;
-}
-.empty-letter-box.empty {
-  border-bottom: none;
-}
-
-main {
-  width: 90%;
-  margin: 70px auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .remaining-lives {
   font-size: 1.5rem;
   margin-left: 50px;
 }
 
-.letter-box.clicked {
-  cursor: not-allowed;
-  text-decoration: line-through;
-  background-color: rgb(158, 56, 51);
-  border-color: rgb(158, 56, 51);
+.img.gifItem {
+  margin: auto;
+  display:flex;
 }
 
-.message-box {
+.content-styling {
   display: flex;
+  background-color: white;
+  width: 700px;
+  height: 600px;
+  align-self: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  box-shadow: 10px 5px 5px rgb(44, 94, 174, 0.5);
 }
 
+
+#allGuessesMade_display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  font-size: x-small;
+  color: rgb(227, 234, 236);
+}
+/* ---  Background CSS Tutorial https://manuel.pinto.dev  */
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
