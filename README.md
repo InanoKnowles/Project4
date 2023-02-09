@@ -60,6 +60,14 @@ Some queries don't have enough items to have 3 gifs appear.
 
 I'm ALWAYS a winner.
 
+## Where we came from to where we went...
+
+![Screenshot 2023-02-09 at 3 17 36 am](https://user-images.githubusercontent.com/116997107/217690916-ea574455-7c34-40b1-8b55-fcf7484a412a.png)
+
+![Screenshot 2023-02-09 at 2 18 22 am](https://user-images.githubusercontent.com/116997107/217690944-7500f919-20cb-465c-8dbc-8eae60f1c5bd.png)
+
+![Screenshot 2023-02-09 at 11 23 34 am](https://user-images.githubusercontent.com/116997107/217690974-6bfe6f6f-7f31-41eb-89c7-9afebff2cfea.png)
+
 ## An RSS newsfeed (Scrapped that)
 
 - Newspaper but....Digital!!!
