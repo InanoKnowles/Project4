@@ -6,7 +6,6 @@ const resultsElement = document.getElementById("results");
 const wordElement = document.getElementById("wordElement");
 
 let q = "";
-let reloadCount = 0;
 let splitWord = [];
 let wordLength = 0;
 
@@ -63,7 +62,7 @@ function splitWords(word) {
 
 function imgSearchOfRandWord(q) {
   let path = `https://api.giphy.com/v1/gifs/search?api_key=5axeqUNKjjSDpnrZGYF4EGNKBKkxh9sY&q=${q}&limit=3&&rating=g&lang=en`;
-  // console.log("New Gifs reloaded " + reloadCount + " times");
+
   let fetchPromise = fetch(path);
   let resultsHTML = "";
   fetchPromise
@@ -126,6 +125,7 @@ console.log(letters_string.split(""));
 let lives = 7;
 let gameOver = false;
 let guessProgress = 0;
+let guessStall = 0;
 
 const hidden_word = theHiddenWord;
 
@@ -152,12 +152,12 @@ playGame.addEventListener("submit", function (event) {
 guessLetterButton.addEventListener("click", function (event) {
   event.preventDefault();
   let theLetter = guessInput.value;
-
+  let totalGuesses = 0;
   if (theLetter === "") {
     messageBox.innerText = "Please enter a letter";
   } else {
     console.log("The letter entered was: " + theLetter);
-
+    //display all guesses on the screen
     let indexesOfGuessedLetter_correct = [];
     let allGuessesMade_display = document.querySelector(
       "#allGuessesMade_display"
@@ -176,7 +176,7 @@ guessLetterButton.addEventListener("click", function (event) {
     }
 
     console.log(indexesOfGuessedLetter_correct);
-    console.log(allGuessesMade_display + "Meow");
+    // console.log(allGuessesMade_display + "Meow");
 
     if (indexesOfGuessedLetter_correct.length !== 0) {
       // The player got one right! Update the wordLetters boxes
@@ -189,18 +189,20 @@ guessLetterButton.addEventListener("click", function (event) {
     } else {
       //Player guessed wrong - subtract lives
       lives = lives - 1;
+      totalGuesses = theLetter.length;
+      console.log(totalGuesses);
     }
 
-    // if (guessProgress === wordLength) {
-    //   messageBox.innerText = `You WON with ${wrongGuesses_count} wrong guesses`;
-    //   gameOver = true;
-    //   document.getElementById("guessLetterButton").disabled = true;
-    // }
-
-    // if (lives === 0) {
-    //   messageBox.innerText = `You LOST with ${wrongGuesses_count} guesses...Obviously`;
-    //   gameOver = true;
-    // }
+    if (lives > 0 && guessProgress === wordLength) {
+      // Win state
+      messageBox.innerText = `You WON with ${guessProgress} attempted guesses`;
+      gameOver = true;
+      document.getElementById("guessLetterButton").disabled = true;
+    } else if (lives === 0 && guessProgress < wordLength) {
+      // Lose state
+      messageBox.innerText = `You LOST with ${guessProgress} attempted guesses`;
+      gameOver = true;
+    }
   }
-  remainingLives_count.innerText = lives;
+  remainingLives_count.innerText = lives; //Update the display to show how many lives are left
 });
