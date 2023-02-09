@@ -3,7 +3,7 @@
 const searchInput = document.getElementById("search-input");
 const guessInput = document.getElementById("guessedletter");
 const resultsElement = document.getElementById("results");
-const wordElement = document.getElementById("wordLetters");
+const wordElement = document.getElementById("wordElement");
 
 let q = "";
 let reloadCount = 0;
@@ -24,7 +24,6 @@ function generateRandWord() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data.word);
-      lettersLeftToGuess = data.word.length;
       imgSearchOfRandWord(data.word);
       splitWords(data.word);
       fillBlanks();
@@ -47,7 +46,10 @@ let theHiddenWord = `${q}`;
 //     }
 // });
 
-// Split word
+/**
+ * Split word : We get random word, split it into an array then save the length of the word
+ * @param {string} word the random word that was generated
+ */
 function splitWords(word) {
   splitWord = [];
   wordLength = word.length;
@@ -123,7 +125,7 @@ console.log(letters_string.split(""));
 
 let lives = 7;
 let gameOver = false;
-let filled = 0;
+let guessProgress = 0;
 
 const hidden_word = theHiddenWord;
 
@@ -144,7 +146,7 @@ playGame.addEventListener("submit", function (event) {
   remainingLives_count.innerText = lives;
   document.getElementById("guessLetterButton").disabled = false;
   messageBox.innerText = "";
-  // filled = 0;
+  // guessProgress = 0;
 });
 
 guessLetterButton.addEventListener("click", function (event) {
@@ -152,38 +154,53 @@ guessLetterButton.addEventListener("click", function (event) {
   let theLetter = guessInput.value;
 
   if (theLetter === "") {
-    messageBox.textContent = "Please enter a letter";
+    messageBox.innerText = "Please enter a letter";
   } else {
     console.log("The letter entered was: " + theLetter);
 
-    let letterPos = [];
+    let indexesOfGuessedLetter_correct = [];
+    let allGuessesMade_display = document.querySelector(
+      "#allGuessesMade_display"
+    );
 
-    for (i = 0; i < wordLength; i++) {
+    let guesses = document.createElement("p");
+    let textnode = document.createTextNode(`${theLetter}`);
+    guesses.appendChild(textnode);
+    allGuessesMade_display.appendChild(guesses);
+
+    for (let i = 0; i < wordLength; i++) {
       if (splitWord[i] === theLetter) {
-        letterPos.push(i);
+        indexesOfGuessedLetter_correct.push(i);
+        // allGuessesMade_display.push(i);
       }
     }
-    console.log(letterPos);
 
-    if (letterPos.length != 0) {
-      filled = filled + letterPos.length;
-      for (i = 0; i < letterPos.length; i++) {
-        var id = "letter-" + letterPos[i];
+    console.log(indexesOfGuessedLetter_correct);
+    console.log(allGuessesMade_display + "Meow");
+
+    if (indexesOfGuessedLetter_correct.length !== 0) {
+      // The player got one right! Update the wordLetters boxes
+      guessProgress = guessProgress + indexesOfGuessedLetter_correct.length;
+
+      for (let i = 0; i < indexesOfGuessedLetter_correct.length; i++) {
+        let id = "letter-" + indexesOfGuessedLetter_correct[i];
         document.getElementById(id).value = theLetter;
       }
     } else {
+      //Player guessed wrong - subtract lives
       lives = lives - 1;
     }
-    if (filled === wordLength) {
-      messageBox.textContent = "WON";
-      gameOver = true;
-      document.getElementById("guessLetterButton").disabled = true;
-    }
 
-    if (lives === 0) {
-      messageBox.textContent = "LOST";
-      gameOver = true;
-    }
+    // if (guessProgress === wordLength) {
+    //   messageBox.innerText = `You WON with ${wrongGuesses_count} wrong guesses`;
+    //   gameOver = true;
+    //   document.getElementById("guessLetterButton").disabled = true;
+    // }
+
+    // if (lives === 0) {
+    //   messageBox.innerText = `You LOST with ${wrongGuesses_count} guesses...Obviously`;
+    //   gameOver = true;
+    // }
   }
-  remainingLives_count.textContent = lives;
+  remainingLives_count.innerText = lives;
 });

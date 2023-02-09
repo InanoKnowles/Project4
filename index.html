@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giphman</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="main.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giphman</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
 </head>
 
 <body id="body">
-  
-    <div class="container">
-      
-        <header>
-          <h1>GIPHMAN</h1>
-          <!-- Intended for the API calls -->
-            <form id="playGame">
-                <button type="submit">PLAY GAME</button>
-            </form>
-        </header>
-      </div>
-        <div id="results" class="results"></div>
 
-        <!-- Game Logic/Mechanic  -->
+  <div class="container">
 
-        <div class="header-wrapper">
-          <div class="hint" id="hint"></div>
-          <div class="unknown-word" id="unknownWord"></div>
-        </div>
-        
-          <!-- <div id="letters" class="letters"></div> -->
-          <div class="remaining-lives" id="remainingLives">
-            <p>Remaining lives: <span id="remainingLives_count"></span></p>
-          </div>
-        
-        <div id="wordLetters" class="wordLetters"></div>
-                  
-        <form id="guessLetter">
-        <input type="text" id="guessedletter" name="guessedletter" required
-       minlength="1" maxlength="1" size="10">
-                <button id="guessLetterButton">GUESS</button>
-           </form>
-        
-        <div id="messageBox" class="message-box"></div>
+    <header>
+      <h1>GIPHMAN</h1>
+      <!-- Intended for the API calls -->
+      <form id="playGame">
+        <button type="submit">PLAY GAME</button>
+      </form>
+    </header>
   </div>
-  
-</div>
+  <div id="results" class="results"></div>
+
+  <!-- Game Logic/Mechanic  -->
+
+  <div class="header-wrapper">
+
+    <div class="unknown-word" id="unknownWord"></div>
+  </div>
+
+  <!-- <div id="letters" class="letters"></div> -->
+  <div class="remaining-lives" id="remainingLives">
+    <p>Remaining lives: <span id="remainingLives_count"></span></p>
+  </div>
+
+  <div id="wordElement" class="wordLetters"></div>
+
+  <form id="guessLetter">
+    <input type="text" id="guessedletter" name="guessedletter" required minlength="1" maxlength="1" size="10">
+    <button id="guessLetterButton">GUESS</button>
+  </form>
+
+<div id="allGuessesMade_display"></div>
+
+  <div id="messageBox" class="message-box"></div>
+  </div>
+
+  </div>
 </body>
 
 </html>
