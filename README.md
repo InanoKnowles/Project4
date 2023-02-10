@@ -6,6 +6,8 @@ Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort 
 
 ~ This time....I....present to you...my learning journey.
 
+///-----> New MISSION Resubmission Time
+
 TRY OUT THE GAME HERE:
 
 :link: _[Giphman by Inano](https://inanoknowles.github.io/Project4/)_ :link:
