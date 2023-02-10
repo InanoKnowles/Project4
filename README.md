@@ -4,15 +4,61 @@ Project 4 with General Assembly.
 
 Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort zone AND looks visually pleasing.
 
+My first attempt at doing this concept FAILED nonetheless feel free to scroll down to :diamond_shape_with_a_dot_inside: to see what I made, how I got there and then come all the way back up here to see the glow up. All the other project ideas that got scrapped due to time restraints and current lack of skills and knowledge/confidence at this point in time as a novice - I will tackle them as personal projects in the near future but for now let us focus on making GIPHMAN GREAT AGAIN.
+
+:heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
+
+First things first - What are the new requirements that I need to hit?
+
+![Screenshot 2023-02-10 at 11 21 37 pm](https://user-images.githubusercontent.com/116997107/218103188-1132928d-ca80-48f8-b80f-9ca77287a166.png)
+
+Now...Return to the drawing board.
+
+- What worked?
+
+- What didn't work?
+
+- What could be improved?
+
+- What should be removed?
+
+- What challenges should I make to continue my growth?
+
+For this I have decided to step into doing REACT js this was the program that destroyed my confidence and ability to think...But there's nothing better than facing those struggles with a good set of free resources:
+
+_[Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)_
+
+_[Conditional Rendering - React](https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator)_
+
+_[Handling Events - React](https://reactjs.org/docs/handling-events.html)_
+
+_[React ES6 Arrow Functions - W3schools](https://www.w3schools.com/react/react_es6_arrow.asp)_
+
+After having the most relaxing bubble bath, a trip to the near by all you can eat pizza buffet and several hours of sleep - I returned feeling ready to party. Somehow React is making sense! Tonight's progress so far:
+
+![Screenshot 2023-02-10 at 11 39 26 pm](https://user-images.githubusercontent.com/116997107/218105980-979edb34-b25c-4c54-9753-48b297def943.png)
+
+![Screenshot 2023-02-10 at 11 39 32 pm](https://user-images.githubusercontent.com/116997107/218106085-d79cfe3b-107d-48ee-9f07-236dbb1fd105.png)
+
+I'll need to practice explaining things on a low level, better breaking down of high level and observeing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly.
+
+:heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
+
+:diamond_shape_with_a_dot_inside: :diamond_shape_with_a_dot_inside: :diamond_shape_with_a_dot_inside:
 ~ This time....I....present to you...my learning journey.
 
-///-----> New MISSION Resubmission Time
+Unfortunately this version of the project failed....miserably....dumbly....inside a bucket of shame.
 
-TRY OUT THE GAME HERE:
+Do you know what we do to things inside a bucket of shame?
+
+:fire: :notes: :notes: WE SET FIREEEEE TO THE SHAME ~ :notes: :notes: :fire:
+(Yes in the tune of Adele's set fire to the rain that's just how I roll)
+
+TRY OUT THE FAILED GAME HERE:
 
 :link: _[Giphman by Inano](https://inanoknowles.github.io/Project4/)_ :link:
 
-This is for educational purposes so that I can learn how to code. If you happen to learn anything useful or have any advice for me to improve my skills please do tell :heart:
+This was for educational purposes so that I can learn how to code. If you happen to learn anything useful or have any advice for me to improve my skills please do tell :heart:
 
 ## Giphman
 

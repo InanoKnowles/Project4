@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-// Constant of screen state
+// Constant of screen state hi
 const SCREEN_START = 0;
 const SCREEN_PLAY = 1;
 const SCREEN_WIN = 2;
