@@ -26,6 +26,15 @@ img {
   height:200px;
 }
 
+.leaderboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   display: flex;
   /* background-color: rgb(75, 121, 207); */
@@ -64,9 +73,9 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  box-shadow: 10px 5px 5px rgb(44, 94, 174, 0.5);
+  box-shadow: 10px 5px 5px rgb(44 94 174 / 50%);
 }
 
 

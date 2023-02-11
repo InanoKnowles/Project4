@@ -1,3 +1,5 @@
+//---| API: |---
+
 const searchInput = document.getElementById("search-input");
 const guessInput = document.getElementById("guessedletter");
 const resultsElement = document.getElementById("results");
@@ -7,6 +9,7 @@ let q = "";
 let splitWord = []; // Stores the individual letters from the random word in an array. This will be used later to check if user has guessed a right letter
 let wordLength = 0; // Length of the random word
 document.getElementById("guessLetterButton").disabled = true;
+let totalGuesses = 0;
 
 //---| Generates a random word for the game |---
 
@@ -124,16 +127,22 @@ remainingLives_count.innerText = lives;
 //---| Eventlisteners |---
 
 playGame.addEventListener("submit", function (event) {
-  while (allGuessesMade_display.firstChild) {
-    allGuessesMade_display.removeChild(allGuessesMade_display.lastChild);
+  if (document.getElementById("name").value == "") {
+    console.log("Enter Name");
+  } else {
+    totalGuesses = 0;
+    guessProgress = 0;
+    while (allGuessesMade_display.firstChild) {
+      allGuessesMade_display.removeChild(allGuessesMade_display.lastChild);
+    }
+    event.preventDefault();
+    generateRandWord();
+    resultsElement.innerHTML = "";
+    lives = 5; // resets the lives counter after game is played
+    remainingLives_count.innerText = lives;
+    document.getElementById("guessLetterButton").disabled = false;
+    messageBox.innerText = "";
   }
-  event.preventDefault();
-  generateRandWord();
-  resultsElement.innerHTML = "";
-  lives = 5; // resets the lives counter after game is played
-  remainingLives_count.innerText = lives;
-  document.getElementById("guessLetterButton").disabled = false;
-  messageBox.innerText = "";
   // guessProgress = 0;
 });
 
@@ -149,10 +158,10 @@ guessLetterButton.addEventListener("click", function (event) {
   }
   console.log("guessedword " + guessedWord);
 
-  let totalGuesses = 0;
   if (guessedWord.length === "") {
     messageBox.innerText = "Please enter a word";
   } else {
+    totalGuesses = totalGuesses + 1;
     //console.log("The word entered was: " + theLetter);
     //display all guesses on the screen
     let indexesOfGuessedLetter_correct = [];
@@ -164,14 +173,16 @@ guessLetterButton.addEventListener("click", function (event) {
     let guesses = document.createElement("p");
     let textnode = document.createTextNode(`${guessedWordString}`);
     let blankNode = document.createTextNode(" ");
-    console.log(" guessed word ", guessedWordString);
+    console.log("guessed word ", guessedWordString);
     guesses.appendChild(textnode);
     allGuessesMade_display.appendChild(guesses);
     allGuessesMade_display.appendChild(blankNode);
 
     for (let i = 0; i < wordLength; i++) {
-      if (splitWord[i] === guessedWord[i]) {
-        indexesOfGuessedLetter_correct.push(i);
+      if (document.getElementById("letter-" + i).readOnly == false) {
+        if (splitWord[i] === guessedWord[i]) {
+          indexesOfGuessedLetter_correct.push(i);
+        }
       }
     }
 
@@ -194,47 +205,69 @@ guessLetterButton.addEventListener("click", function (event) {
     }
 
     if (lives > 0 && guessProgress === wordLength) {
-      let totalGuesses = guessProgress + incorrectLettersGuessed;
+      // brokennnnnnn
       // Win state
       messageBox.innerText = `You WON with a total of ${totalGuesses} guess(es). You got ${incorrectLettersGuessed} letter(s) that were wrong. The game is over now - Thanks for playing`;
       gameOver = true;
-      allGuessesMade_display.removeChild(allGuessesMade_display.lastChild);
       document.getElementById("guessLetterButton").disabled = true;
-    } else if (lives === 0 && guessProgress < wordLength) {
+      //console.log("new record " + document.getElementById("leader-1-score").value)
+
+      //Leaderboard check
+      console.log("At leaderboard check");
+      var inLeaderboard = false;
+      let table = document.getElementById("leaderboard-table");
+
+      // If no one in leaderboard
+      if (table.rows[1] == undefined) {
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = document.getElementById("name").value;
+        cell2.innerHTML = totalGuesses;
+      } else {
+        for (var i = 1, row; (row = table.rows[i]); i++) {
+          if (parseInt(row.cells[1].innerText) > totalGuesses) {
+            var row = table.insertRow(i);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = document.getElementById("name").value;
+            cell2.innerHTML = totalGuesses;
+            inLeaderboard = true;
+            break; // Stop if we have found where the user will be sitting
+          }
+        }
+        if (inLeaderboard == true && table.rows[6] != undefined) {
+          // Only maintian 5 people in leaderboard
+          table.deleteRow(6);
+        }
+        if (inLeaderboard == false && table.rows.length < 6) {
+          var row = table.insertRow(table.rows.length);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          cell1.innerHTML = document.getElementById("name").value;
+          cell2.innerHTML = totalGuesses;
+          inLeaderboard = true;
+        }
+      }
+    } else if (lives === 0 && guessProgress <= wordLength) {
+      // TO DO:
       // Lose state
       messageBox.innerText = `You LOST with a total of ${totalGuesses} guess(es). You got ${incorrectLettersGuessed} letter(s) that were wrong. The game is over now - Thanks for playing`;
       gameOver = true;
-      allGuessesMade_display.removeChild(allGuessesMade_display.lastChild);
       document.getElementById("guessLetterButton").disabled = true;
     }
   }
   remainingLives_count.innerText = lives; //Update the display to show how many lives are left
   incorrectLettersGuessed = 5 - lives;
-
   for (let i = 0; i < splitWord.length; i++) {
     let id = "letter-" + i;
     if (document.getElementById(id).readOnly == false) {
       document.getElementById(id).value = "";
     }
   }
+
   // guessInput.value = "";
 });
-
-let leaderBoardScore = 11 + " points";
-if (playerScore > leaderBoardScore) {
-  console.log(
-    "Your score beat the leaderboard's score! Your score will now be the new challenge to beat!"
-  );
-  leaderBoardScore = playerScore;
-} else if (playerScore < leaderBoardScore) {
-  console.log(
-    "Unfortunately you did not beat the leaderboard's score this time"
-  );
-} else {
-  console.log(
-    "Getting the same points as the leaderboard is equal to a draw. That means it doesn't count as a win against the leaderboard this time"
-  );
-}
 //---| Quotes Random Generator - If I get time I will do this |---
 // let category = 'happiness'
 // $.ajax({
