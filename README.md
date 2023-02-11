@@ -40,7 +40,7 @@ After having the most relaxing bubble bath, a trip to the near by all you can ea
 
 ![Screenshot 2023-02-10 at 11 39 32 pm](https://user-images.githubusercontent.com/116997107/218106085-d79cfe3b-107d-48ee-9f07-236dbb1fd105.png)
 
-I'll need to practice explaining things on a low level, better breaking down of high level and observeing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly.
+I'll need to practice explaining things on a low level, better breaking down of high level and observing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly.
 
 :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
 
