@@ -8,7 +8,7 @@ const SCREEN_WIN = 2;
 const SCREEN_LOSE = 3;
 
 const GUESS_AMOUNT = 7;
-const START_GUESSES = [" ", "-", "'", "!", "?"];
+const START_GUESSES = [" ", "-", "'", "!", "?", ","];
 
 const ALPHABET = [
   "A",
@@ -47,9 +47,7 @@ function App() {
   const [guessHistory, setGuessHistory] = useState(START_GUESSES);
   const [remainingGuesses, setRemainingGuesses] = useState(GUESS_AMOUNT);
   const [wordIndex, setWordIndex] = useState(0);
-  const [leaderBoard, setLeaderBoard] = useState([
-    { name: "Nano", score: 1000 },
-  ]);
+  const [leaderBoard, setLeaderBoard] = useState([{ name: "Nano", score: 10 }]);
   const [levelCount, setLevelCount] = useState(0);
   const [savedToLeaderBoard, setSavedToLeaderBoard] = useState(false);
   const [playerName, setPlayerName] = useState("");
@@ -67,9 +65,12 @@ function App() {
     setWordIndex(newWordIndex);
     setScreen(SCREEN_PLAY);
     setLevelCount(levelCount + 1);
+    setRemainingGuesses(GUESS_AMOUNT);
   }
 
-  function goToStart() {}
+  function goToStart() {
+    setScreen(SCREEN_START);
+  }
 
   function saveScore() {
     setSavedToLeaderBoard(true);
@@ -137,9 +138,22 @@ function App() {
     <div className="App">
       <h1>GIPHMAN</h1>
       {screen === SCREEN_START && (
-        <button className="play-game-btn" onClick={goToPlay}>
-          PLAY GAME
-        </button>
+        <div>
+          <button className="play-game-btn" onClick={goToPlay}>
+            PLAY GAME
+          </button>
+          <div className="startScreenContent">
+            <div className="textStart">
+              To play: You get 7 lives, each round you will be given a word or
+              phrase to guess the only hint you get is 3 related images. Each
+              time you correctly guess a word you get to continue (by your
+              choice) to the next round. However if you choose to quit with
+              lives still available you will lose your progress and your score
+              will NOT be recorded in the leaderboard! This is survival of the
+              wordiest giphman around!
+            </div>
+          </div>
+        </div>
       )}
       {screen === SCREEN_PLAY && (
         <div>
@@ -193,15 +207,26 @@ function App() {
             ))}
           </div>
           <div
+            className="counters"
             style={{
-              fontSize: 4 + "em",
+              fontSize: 2 + "em",
               margin: 1 + "rem",
             }}
           >
-            Remaining Guesses: {remainingGuesses}
+            {/* Counters for guessing */}
+            <div> Remaining Guesses: {remainingGuesses}</div>
+
+            <div> Incorrect Guesses: {7 - remainingGuesses}</div>
+
+            {/* Styling of key legend (So players know what the colours mean) */}
             <div>
               <div className="keyEntry">
-                <div className="letter">A</div>
+                <div
+                  style={{ color: "black", background: "white" }}
+                  className="letter"
+                >
+                  A
+                </div>
                 <div className="caption">Available Guess</div>
               </div>
               <div className="keyEntry">
@@ -222,12 +247,22 @@ function App() {
                 </div>
                 <div className="caption">Wrong Guess!</div>
               </div>
+              <div>
+                Click on one letter at a time to guess if it is in the word or
+                phrase.
+              </div>
             </div>
           </div>
         </div>
       )}
       {screen === SCREEN_WIN && (
         <div>
+          That secret word or phrase: {word}
+          <div>
+            YOU WON 😄 You have guessed it correctly with{" "}
+            {guessHistory.length - 6} total guesses. Out of those guesses you
+            got {7 - remainingGuesses} wrong.
+          </div>
           <button className="play-game-btn" onClick={goToNextLevel}>
             PLAY NEXT LEVEL
           </button>
@@ -257,6 +292,11 @@ function App() {
               </button>
             </div>
           )}
+          <div>
+            <div>That secret word or phrase was: {word}</div>
+            YOU LOST 😭 You have guessed it wrong after{" "}
+            {guessHistory.length - 6} incorrect guesses
+          </div>
           <button className="play-game-btn" onClick={goToPlay}>
             PLAY AGAIN ?
           </button>
