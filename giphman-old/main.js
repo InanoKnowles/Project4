@@ -214,22 +214,22 @@ guessLetterButton.addEventListener("click", function (event) {
 
       //Leaderboard check
       console.log("At leaderboard check");
-      var inLeaderboard = false;
+      let inLeaderboard = false;
       let table = document.getElementById("leaderboard-table");
 
       // If no one in leaderboard
       if (table.rows[1] == undefined) {
-        var row = table.insertRow(1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
+        let row = table.insertRow(1);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
         cell1.innerHTML = document.getElementById("name").value;
         cell2.innerHTML = totalGuesses;
       } else {
-        for (var i = 1, row; (row = table.rows[i]); i++) {
+        for (let i = 1, row; (row = table.rows[i]); i++) {
           if (parseInt(row.cells[1].innerText) > totalGuesses) {
-            var row = table.insertRow(i);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
+            let row = table.insertRow(i);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
             cell1.innerHTML = document.getElementById("name").value;
             cell2.innerHTML = totalGuesses;
             inLeaderboard = true;
@@ -241,9 +241,9 @@ guessLetterButton.addEventListener("click", function (event) {
           table.deleteRow(6);
         }
         if (inLeaderboard == false && table.rows.length < 6) {
-          var row = table.insertRow(table.rows.length);
-          var cell1 = row.insertCell(0);
-          var cell2 = row.insertCell(1);
+          let row = table.insertRow(table.rows.length);
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
           cell1.innerHTML = document.getElementById("name").value;
           cell2.innerHTML = totalGuesses;
           inLeaderboard = true;

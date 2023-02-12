@@ -42,6 +42,14 @@ After having the most relaxing bubble bath, a trip to the near by all you can ea
 
 I'll need to practice explaining things on a low level, better breaking down of high level and observing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly.
 
+![Screenshot 2023-02-12 at 11 29 55 pm](https://user-images.githubusercontent.com/116997107/218314350-70cb9a76-9965-4429-9135-33799be158fa.png)
+
+My progress so far has been slowed down by a lot of re-reading documentation on REACT JS - Learning how to explain things on a "low level"...when I realised...I'm clearly being targeted. None of the other students were interviewed or asked about their knowledge on their code. So why am I the only one?
+
+Even the project doesn't say anything about needing to do an interview to explain every tiny detail - Reading over the student handbook...Pondering...
+
+![Screenshot 2023-02-12 at 11 42 33 pm](https://user-images.githubusercontent.com/116997107/218314593-7b841ae6-25f4-4d30-ae5a-db99e044e902.png)
+
 :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
 
 :diamond_shape_with_a_dot_inside: :diamond_shape_with_a_dot_inside: :diamond_shape_with_a_dot_inside:

@@ -89,9 +89,9 @@ function App() {
     if (screen !== SCREEN_PLAY) return;
     setGuessHistory(START_GUESSES);
     let path = `https://api.giphy.com/v1/gifs/search?api_key=5axeqUNKjjSDpnrZGYF4EGNKBKkxh9sY&q=${word}&limit=3&&rating=g&lang=en`;
-
     fetch(path)
       .then((res) => res.json())
+
       .then((json) => {
         const arrayOfUrls = json.data.map(
           (object) => object.images.fixed_width.url
