@@ -6,6 +6,17 @@ Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort 
 
 My first attempt at doing this concept FAILED nonetheless feel free to scroll down to :diamond_shape_with_a_dot_inside: to see what I made, how I got there and then come all the way back up here to see the glow up. All the other project ideas that got scrapped due to time restraints and current lack of skills and knowledge/confidence at this point in time as a novice - I will tackle them as personal projects in the near future but for now let us focus on making GIPHMAN GREAT AGAIN.
 
+Here I Present to yoooooooooooooou Giphman Resubmission which was deployed using Surge
+
+CLICK THIS LINK......She ugly but she works...... :relieved:
+:link: _[Inano's Giphman in React JS](https://inanos-giphman.surge.sh/)_ :link:
+
+What this version has:
+
+:white_check_mark: Win & Lose Mechanics,
+:white_check_mark: Leaderboard &
+:white_check_mark: Improved UX - On Browser (Based off feedback from everyone who has played the failed version)
+
 :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
 
 First things first - What are the new requirements that I need to hit?
@@ -24,7 +35,9 @@ Now...Return to the drawing board.
 
 - What challenges should I make to continue my growth?
 
-For this I have decided to step into doing REACT js this was the program that destroyed my confidence and ability to think...But there's nothing better than facing those struggles with a good set of free resources:
+For this I have decided to step into doing REACT js this was the program that destroyed my confidence and ability to think...After doing my best to tackle my weakness - I think I've come to really enjoy REACT js - I still have a lot to learn.
+
+But there's nothing better than facing those struggles with a good set of free resources:
 
 _[Introducing Hooks - React](https://reactjs.org/docs/hooks-intro.html)_
 
@@ -34,21 +47,21 @@ _[Handling Events - React](https://reactjs.org/docs/handling-events.html)_
 
 _[React ES6 Arrow Functions - W3schools](https://www.w3schools.com/react/react_es6_arrow.asp)_
 
-After having the most relaxing bubble bath, a trip to the near by all you can eat pizza buffet and several hours of sleep - I returned feeling ready to party. Somehow React is making sense! Tonight's progress so far:
+After having the most relaxing bubble bath, a trip to the near by all you can eat pizza buffet and several hours of sleep in tears - I returned feeling ready to party. Somehow React is making sense!
+
+Progress so far:
 
 ![Screenshot 2023-02-10 at 11 39 26 pm](https://user-images.githubusercontent.com/116997107/218105980-979edb34-b25c-4c54-9753-48b297def943.png)
 
 ![Screenshot 2023-02-10 at 11 39 32 pm](https://user-images.githubusercontent.com/116997107/218106085-d79cfe3b-107d-48ee-9f07-236dbb1fd105.png)
 
-I'll need to practice explaining things on a low level, better breaking down of high level and observing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly.
+I'll need to practice explaining things on a low level, better breaking down of high level and observing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly. Though I may not be able to do that in this very moment I know I will be able too.
 
 ![Screenshot 2023-02-12 at 11 29 55 pm](https://user-images.githubusercontent.com/116997107/218314350-70cb9a76-9965-4429-9135-33799be158fa.png)
 
-My progress so far has been slowed down by a lot of re-reading documentation on REACT JS - Learning how to explain things on a "low level"...when I realised...I'm clearly being targeted. None of the other students were interviewed or asked about their knowledge on their code. So why am I the only one?
+My progress so far has been slowed down by a lot of re-reading documentation on REACT JS - Learning how to explain things in a professional way ~ I'm not used to talking to adults or using real or related words to describe things I'm describing so that has definitely been a struggle for me. It's worth it though because in the real work environment I do need to be able to communicate better than I do now.
 
-Even the project doesn't say anything about needing to do an interview to explain every tiny detail - Reading over the student handbook...Pondering...
-
-![Screenshot 2023-02-12 at 11 42 33 pm](https://user-images.githubusercontent.com/116997107/218314593-7b841ae6-25f4-4d30-ae5a-db99e044e902.png)
+I hope that you enjoyed the journey of learning how to fail and experiment with REACT JS with me.
 
 :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
 
@@ -62,9 +75,7 @@ Do you know what we do to things inside a bucket of shame?
 :fire: :notes: :notes: WE SET FIREEEEE TO THE SHAME ~ :notes: :notes: :fire:
 (Yes in the tune of Adele's set fire to the rain that's just how I roll)
 
-TRY OUT THE FAILED GAME HERE:
-
-:link: _[Giphman by Inano](https://inanoknowles.github.io/Project4/)_ :link:
+Don't look at the old game...Its shamefulness hahahaha remember
 
 This was for educational purposes so that I can learn how to code. If you happen to learn anything useful or have any advice for me to improve my skills please do tell :heart:
 

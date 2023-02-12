@@ -127,7 +127,7 @@ remainingLives_count.innerText = lives;
 //---| Eventlisteners |---
 
 playGame.addEventListener("submit", function (event) {
-  if (document.getElementById("name").value == "") {
+  if (document.getElementById("name").value === "") {
     console.log("Enter Name");
   } else {
     totalGuesses = 0;
@@ -195,7 +195,7 @@ guessLetterButton.addEventListener("click", function (event) {
 
       for (let i = 0; i < indexesOfGuessedLetter_correct.length; i++) {
         let id = "letter-" + indexesOfGuessedLetter_correct[i];
-        //document.getElementById(id).value = splitWord[i];
+        document.getElementById(id).value = splitWord[i];
         document.getElementById(id).readOnly = true;
         document.getElementById(id).style.backgroundColor = "green";
       }
@@ -218,7 +218,7 @@ guessLetterButton.addEventListener("click", function (event) {
       let table = document.getElementById("leaderboard-table");
 
       // If no one in leaderboard
-      if (table.rows[1] == undefined) {
+      if (table.rows[1] === undefined) {
         let row = table.insertRow(1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
@@ -236,11 +236,11 @@ guessLetterButton.addEventListener("click", function (event) {
             break; // Stop if we have found where the user will be sitting
           }
         }
-        if (inLeaderboard == true && table.rows[6] != undefined) {
+        if (inLeaderboard === true && table.rows[6] !== undefined) {
           // Only maintian 5 people in leaderboard
           table.deleteRow(6);
         }
-        if (inLeaderboard == false && table.rows.length < 6) {
+        if (inLeaderboard === false && table.rows.length < 6) {
           let row = table.insertRow(table.rows.length);
           let cell1 = row.insertCell(0);
           let cell2 = row.insertCell(1);
@@ -261,7 +261,7 @@ guessLetterButton.addEventListener("click", function (event) {
   incorrectLettersGuessed = 5 - lives;
   for (let i = 0; i < splitWord.length; i++) {
     let id = "letter-" + i;
-    if (document.getElementById(id).readOnly == false) {
+    if (document.getElementById(id).readOnly === false) {
       document.getElementById(id).value = "";
     }
   }
