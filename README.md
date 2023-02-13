@@ -6,18 +6,104 @@ Project 4 is to DECIDE YOUR OWN PROJECT that pushes you OUTSIDE of your comfort 
 
 My first attempt at doing this concept FAILED nonetheless feel free to scroll down to :diamond_shape_with_a_dot_inside: to see what I made, how I got there and then come all the way back up here to see the glow up. All the other project ideas that got scrapped due to time restraints and current lack of skills and knowledge/confidence at this point in time as a novice - I will tackle them as personal projects in the near future but for now let us focus on making GIPHMAN GREAT AGAIN.
 
-Here I Present to yoooooooooooooou Giphman Resubmission which was deployed using Surge
+:relieved: :relieved: :relieved:
 
-CLICK THIS LINK......She ugly but she works...... :relieved:
+## HOW TO PLAY
+
+1. Click the link below
+2. BROWSER only (Recommend using Chrome)
+
+Here I Present to yoooooooooooooou My Giphman Resubmission which was deployed using Surge
+
 :link: _[Inano's Giphman in React JS](https://inanos-giphman.surge.sh/)_ :link:
 
 What this version has:
 
-:white_check_mark: Win & Lose Mechanics,
-:white_check_mark: Leaderboard &
-:white_check_mark: Improved UX - On Browser (Based off feedback from everyone who has played the failed version)
+:white_check_mark: Win & Lose Mechanics (you can actually win|lose now & choose to give up),
 
-:heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
+:white_check_mark: Users can guess the word|phrase,
+
+:white_check_mark: A word|phrase getting represented with images that Users can see as a hint,
+
+:white_check_mark: User limitations (Users cannot click on the same letter over and over again),
+
+:white_check_mark: Counters for remaining guesses and incorrect guesses,
+
+:white_check_mark: Leaderboard(fugly)
+
+## TOOLS
+
+- HTML
+- CSS
+- JAVASCRIPT
+- REACT JS
+- SURGE
+- GOOGLE
+- NODE JS
+
+## CHALLENGES
+
+- My perception of what I am being asked to do verses what the teacher is actually asking me to do
+
+- Understanding REACT js and overcoming my fear of using it was a huge mental challenge for me 
+
+- Some functions that I found challenging in the beginning but eventually got to work:
+
+- map(): Creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+- filter(): Creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+
+- every(): Tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+- some(): Tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+- useEffect(): The Effect Hook lets you perform side effects in function components. Tells React that your component needs to do something after render. React will remember the function you passed and call it later after performing the DOM updates.
+
+- Accepting defeat: I believe what I created hits MVP (Its better than the MVP requirements) I even managed to pull off miracles using REACT js and deploying on my own for the first time. A lot of questions couldn't be answered because technically it was after the course so I had to tackle this resubmission completely alone without anymore guidance. For someone like me who has no prior experience in coding this was pretty damn awesome. Yay good work me :tada:  *pity party time* :tada:
+
+## NEW BUGS
+
+- Some phrases are TOO random that people are losing too soon (Nobody has made it to the last level)
+- Sometimes if the phrases are too long the images won't appear but you can still guess it
+- Sometimes it lags (could be just my laptop and internet arguing again)
+- If the word or phrase starts off similar to the prior one the giphy api gives the same images
+- Leaderboard updates but needs to be styled to look prettier it needs to visually shout what it is for the people out the back
+- More words, more phrases
+
+## NEW FUTURE FEATURES
+
+- I wanna build my own random word|phrase API that can give words or quotes
+
+- I came across something called local storage in my research - I WANNA USE THAT as soon as I learn how to do that I'm gonna add it
+
+- Survival Mode: You get 7 lives and you gotta survive as many levels on that one set of lives, If you are on survival easy you get your guesses refreshed. If on hard, you run on the one set of 7 lives and 7 guesses.
+
+- Music and sound effects: Will never start on, this is a toggle on feature
+
+- Needs to be made responsive for use on all the commonly used screens/browsers
+
+- Style it to be more readable
+
+- Instead of the leaderboard appearing when you lose a game I should make it show on the first screenState so that people can see their old attempts and be motivated to beat their scores
+
+- Make it so people all over the world can challenge each other
+
+## LESSONS
+
+- Don't be afraid of challenging things that you have either always struggled with or fear doing because if it didn't work the first time, it will the second time
+
+- BE VERBAL - Always talk you thoughts outloud with every bit of code
+
+- Write down your train of thought or ALWAYS do an audio/screenrecord THEN watch it (write notes on that)
+
+- DON'T GIVE UP even if you know you are going to fail anyway keep trying, keep pushing. You can only improve. 
+
+Thank you for being a part of my journey.
+
+If you wanna see my original plans for the first version feel free to keep reading on... 
+
+
+:heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: 
 
 First things first - What are the new requirements that I need to hit?
 
@@ -55,7 +141,7 @@ Progress so far:
 
 ![Screenshot 2023-02-10 at 11 39 32 pm](https://user-images.githubusercontent.com/116997107/218106085-d79cfe3b-107d-48ee-9f07-236dbb1fd105.png)
 
-I'll need to practice explaining things on a low level, better breaking down of high level and observing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly. Though I may not be able to do that in this very moment I know I will be able too.
+I'll need to practice explaining things on a low level, better breaking down of high level and observing what every tiny bit of code does at different points within the code. I really need to read real books written by people in my age group so that I can use better words and describe things properly. One step at a time.
 
 ![Screenshot 2023-02-12 at 11 29 55 pm](https://user-images.githubusercontent.com/116997107/218314350-70cb9a76-9965-4429-9135-33799be158fa.png)
 
@@ -63,10 +149,10 @@ My progress so far has been slowed down by a lot of re-reading documentation on 
 
 I hope that you enjoyed the journey of learning how to fail and experiment with REACT JS with me.
 
-:heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign:
+:heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: :heavy_minus_sign: 
 
 :diamond_shape_with_a_dot_inside: :diamond_shape_with_a_dot_inside: :diamond_shape_with_a_dot_inside:
-~ This time....I....present to you...my learning journey.
+~ This time....I....present to you...my failed learning journey.
 
 Unfortunately this version of the project failed....miserably....dumbly....inside a bucket of shame.
 
@@ -75,7 +161,7 @@ Do you know what we do to things inside a bucket of shame?
 :fire: :notes: :notes: WE SET FIREEEEE TO THE SHAME ~ :notes: :notes: :fire:
 (Yes in the tune of Adele's set fire to the rain that's just how I roll)
 
-Don't look at the old game...Its shamefulness hahahaha remember
+There is no link for the shame game.
 
 This was for educational purposes so that I can learn how to code. If you happen to learn anything useful or have any advice for me to improve my skills please do tell :heart:
 
@@ -250,3 +336,4 @@ Leader board - Highest score in that level
 Survivor board - Continue on a streak until your first unguessable word.
 
 Actually add a hangman drawing in CSS to the right hand side (for now theres just a gap there for that)
+
