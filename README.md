@@ -17,6 +17,10 @@ Here I Present to yoooooooooooooou My Giphman Resubmission which was deployed us
 
 :link: _[Inano's Giphman in React JS](https://inanos-giphman.surge.sh/)_ :link:
 
+:tada: :confetti_ball: :tada: :confetti_ball: THIS VERSION PASSED! :tada: :confetti_ball: :tada: :confetti_ball:
+
+![Screenshot 2023-02-14 at 12 34 12 pm](https://user-images.githubusercontent.com/116997107/218624229-c726360c-5db1-4821-ab2c-d432a7f84814.png)
+
 What this version has:
 
 :white_check_mark: Win & Lose Mechanics (you can actually win|lose now & choose to give up),
@@ -59,7 +63,7 @@ What this version has:
 
 - useEffect(): The Effect Hook lets you perform side effects in function components. Tells React that your component needs to do something after render. React will remember the function you passed and call it later after performing the DOM updates.
 
-- Accepting defeat: I believe what I created hits MVP (Its better than the MVP requirements) I even managed to pull off miracles using REACT js and deploying on my own for the first time. A lot of questions couldn't be answered because technically it was after the course so I had to tackle this resubmission completely alone without anymore guidance. For someone like me who has no prior experience in coding this was pretty damn awesome. Yay good work me :tada:  *pity party time* :tada:
+- Accepting defeat: I believe what I created hits MVP (Its better than the MVP requirements) I even managed to pull off miracles using REACT js and deploying on my own for the first time. A lot of questions couldn't be answered because technically it was after the course so I had to tackle this resubmission completely alone without anymore guidance. For someone like me who has no prior experience in coding this was pretty damn awesome. Yay good work me :tada:  *surprised party time* :tada:
 
 ## NEW BUGS
 
